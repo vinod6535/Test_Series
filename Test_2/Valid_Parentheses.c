@@ -1,6 +1,7 @@
-
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
 
 struct Stack {
     int top;
@@ -52,4 +53,18 @@ bool isValid(char *expression) {
     bool result = isEmpty(&stack);
     free(stack.arr);
     return result;
+}
+
+int main() {
+    char expression[100];
+    printf("Enter the expression: ");
+    scanf("%s", expression);
+
+    if (isValid(expression)) {
+        printf("The expression has valid parentheses.\n");
+    } else {
+        printf("The expression does not have valid parentheses.\n");
+    }
+
+    return 0;
 }
